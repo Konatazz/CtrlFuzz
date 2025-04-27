@@ -36,7 +36,6 @@ def infer(
     os.makedirs(output_dir, exist_ok=True)
     model = diff_model(3, 3, 1, 1, ["res", "res"], 100000, "cosine", 100, device, 100, 1000, 16, 0.0, step_size, DDIM_scale)
     model.loadModel(loadDir, loadFile, loadDefFile)
-
     for i in range(num_images):
         noise, imgs = model.sample_imgs(1, class_label, w, True, True, True, corrected)
         noise = torch.clamp(noise.cpu().detach().int(), 0, 255)
