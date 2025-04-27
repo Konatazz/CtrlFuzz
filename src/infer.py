@@ -7,9 +7,9 @@ import matplotlib.animation as animation
 import click
 
 @click.command()
-@click.option("--loadDir", "loadDir", type=str, default="models/models_res_res", help="Location of the models to load in.", required=True)
-@click.option("--loadFile", "loadFile", type=str, default="model_438e_550000s.pkl", help="Name of the .pkl model file to load in. Ex: model_438e_550000s.pkl", required=True)
-@click.option("--loadDefFile", "loadDefFile", type=str, default="model_params_438e_550000s.json", help="Name of the .json model file to load in. Ex: model_params_438e_550000s.json", required=True)
+@click.option("--loadDir", "loadDir", type=str, default="", help="Location of the models to load in.", required=True)
+@click.option("--loadFile", "loadFile", type=str, default="", help="Name of the .pkl model file to load in.", required=True)
+@click.option("--loadDefFile", "loadDefFile", type=str, default="", help="Name of the .json model file to load in.", required=True)
 @click.option("--num_images", "num_images", type=int, default=200, help="Number of images to generate.", required=False)
 @click.option("--step_size", "step_size", type=int, default=10, help="Step size when generating. A step size of 10 with a model trained on 1000 steps takes 100 steps to generate. Lower is faster, but produces lower quality images.", required=False)
 @click.option("--DDIM_scale", "DDIM_scale", type=int, default=1, help=" 1:DDPM  0:DDIM.", required=False)
